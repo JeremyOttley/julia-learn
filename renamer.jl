@@ -1,4 +1,6 @@
-## grab all images
+# only works in dir where script is located
+
+using Random
 
 function isImg(f)
   endswith(f, r"jpg|png|bmp|jpeg")
@@ -8,14 +10,10 @@ function getImages(dir)
   filter(isImg, readdir(dir))
 end
 
-## randomString()
-
-function randomString()
-  return
+function rename(img)
+  mv(img, randstring(16) * splitext(img)[2])
 end
 
-## rename each img to randomString
-
 for img in getImages(pwd())
-  mv(img, randomString())
+  rename(img)
 end
