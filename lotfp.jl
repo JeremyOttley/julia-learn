@@ -3,22 +3,21 @@ using JSON
 
 struct Character
   thac_9::Int64
-  spell::Any[]
+  spell::Array{String, Any}
   ac::Int64
   saves::Dict{String, Any}
   hp:Int64
   to_hit::Any[Array{Int64, 2}]
   appearance::String
   system::String
-  skills::Any[]
+  skills::Array{String, Any}
   class::String
-  languages::Any[]
-  equipment::Any[]
-  attributes::Any[Array{Int64, 2}]
-  notes::Any[]
+  languages::Array{String, Any}
+  equipment::Array{String, Any}
+  attributes::Array[Array{Int64, 2}]
+  notes::Array{String, Any}
   personality::String
-
-
+end
       
 function getUrl(url)
   resp = HTTP.get(url)
