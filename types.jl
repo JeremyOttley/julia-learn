@@ -1,13 +1,26 @@
 # types are immutable
 
-struct Person
-  name::String
-  age::Int
+struct Computer
+  manufacturer::String
+  cpu::String
+  power_consumption::Float64
+  ram::Int
+  ssd::Int
+  quantity::Int
+  price::Float64
 end
 
-newemployee = Person("Jeremy", 33)
+workLaptop = Computer("Dell", 
+                      "Intel", 
+                      89.15, 
+                      32, 
+                      250, 
+                      1, 
+                      1600.00)
 
-newemployee.name
+function getCpur(model::Computer)
+  return model.cpu
+end
 
 ##
 
