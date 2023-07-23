@@ -20,3 +20,4 @@ catch exception
 end
   
 
+#julia -O0 --compile=min --startup=no script.jl
